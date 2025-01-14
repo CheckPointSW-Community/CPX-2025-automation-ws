@@ -1,0 +1,225 @@
+- name: Task for DNS Server
+  cp_mgmt_host:
+    name: DNS Server
+    ipv4_address: 10.0.0.138
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for ERP Server
+  cp_mgmt_host:
+    name: ERP Server
+    ipv4_address: 10.0.0.60
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Exchange
+  cp_mgmt_host:
+    name: Exchange
+    ipv4_address: 198.51.100.11
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for FileServer
+  cp_mgmt_host:
+    name: FileServer
+    ipv4_address: 10.33.11.1
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for FTP_Int
+  cp_mgmt_host:
+    name: FTP_Int
+    ipv4_address: 10.0.0.97
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Guests Corp Srv
+  cp_mgmt_host:
+    name: Guests Corp Srv
+    ipv4_address: 198.59.130.11
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Host A
+  cp_mgmt_host:
+    name: Host A
+    ipv4_address: 192.45.46.18
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Host B
+  cp_mgmt_host:
+    name: Host B
+    ipv4_address: 192.45.46.59
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for HR Server
+  cp_mgmt_host:
+    name: HR Server
+    ipv4_address: 10.0.0.69
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Internal Lab srv 05
+  cp_mgmt_host:
+    name: Internal Lab srv 05
+    ipv4_address: 10.25.2.75
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Mail Relay
+  cp_mgmt_host:
+    name: Mail Relay
+    ipv4_address: 151.20.4.16
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Proxy Server
+  cp_mgmt_host:
+    name: Proxy Server
+    ipv4_address: 151.20.4.142
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Public FTP Server
+  cp_mgmt_host:
+    name: Public FTP Server
+    ipv4_address: 151.20.4.15
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Web Server
+  cp_mgmt_host:
+    name: Web Server
+    ipv4_address: 151.20.4.13
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for WebCalendarServer
+  cp_mgmt_host:
+    name: WebCalendarServer
+    ipv4_address: 10.44.22.3
+    interfaces: []
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

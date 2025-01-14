@@ -1,0 +1,55 @@
+- name: Task for DMZ_gw
+  cp_mgmt_tag:
+    name: DMZ_gw
+    comments: ''
+    color: orange
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Europe_gw
+  cp_mgmt_tag:
+    name: Europe_gw
+    comments: ''
+    color: orchid
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for External_gw
+  cp_mgmt_tag:
+    name: External_gw
+    comments: ''
+    color: yellow
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Internal_gw
+  cp_mgmt_tag:
+    name: Internal_gw
+    comments: ''
+    color: red
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for ThreatEmulation_gw
+  cp_mgmt_tag:
+    name: ThreatEmulation_gw
+    comments: ''
+    color: blue
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

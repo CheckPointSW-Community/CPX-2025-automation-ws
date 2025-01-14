@@ -1,0 +1,12 @@
+- name: Task for .corp.com
+  cp_mgmt_dns_domain:
+    name: .corp.com
+    is_sub_domain: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

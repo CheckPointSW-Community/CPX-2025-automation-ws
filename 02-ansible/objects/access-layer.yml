@@ -1,0 +1,151 @@
+- name: Task for Branch_Office_Policy Network
+  cp_mgmt_access_layer:
+    name: Branch_Office_Policy Network
+    shared: true
+    applications_and_url_filtering: false
+    content_awareness: false
+    mobile_access: false
+    firewall: true
+    implicit_cleanup_action: drop
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+    #fatal: [10.0.1.31]: FAILED! => {"changed": false, "msg": "Checkpoint device returned error 400 with message {'code': 'generic_err_invalid_parameter_name', 'message': 'Unrecognized parameter [add-default-rule]'} Unpublished changes were discarded"}
+    # add_default_rule: false
+- name: Task for Customer Service Server Layer
+  cp_mgmt_access_layer:
+    name: Customer Service Server Layer
+    shared: true
+    applications_and_url_filtering: true
+    content_awareness: false
+    mobile_access: false
+    detect_using_x_forward_for: false
+    firewall: true
+    implicit_cleanup_action: drop
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+    #add_default_rule: false
+- name: Task for Data Center Layer
+  cp_mgmt_access_layer:
+    name: Data Center Layer
+    shared: true
+    applications_and_url_filtering: true
+    content_awareness: true
+    mobile_access: false
+    detect_using_x_forward_for: false
+    firewall: true
+    implicit_cleanup_action: drop
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+   # add_default_rule: false
+- name: Task for Guest Exception Layer
+  cp_mgmt_access_layer:
+    name: Guest Exception Layer
+    shared: true
+    applications_and_url_filtering: true
+    content_awareness: true
+    mobile_access: false
+    detect_using_x_forward_for: false
+    firewall: true
+    implicit_cleanup_action: drop
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+    #add_default_rule: false
+- name: Task for Network
+  cp_mgmt_access_layer:
+    name: Corporate_Policy Network
+    shared: true
+    applications_and_url_filtering: true
+    content_awareness: true
+    mobile_access: false
+    detect_using_x_forward_for: false
+    firewall: true
+    implicit_cleanup_action: drop
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+    #add_default_rule: false
+- name: Task for Public FTP Layer
+  cp_mgmt_access_layer:
+    name: Public FTP Layer
+    shared: true
+    applications_and_url_filtering: false
+    content_awareness: true
+    mobile_access: false
+    detect_using_x_forward_for: false
+    firewall: true
+    implicit_cleanup_action: drop
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+    #add_default_rule: false
+- name: Task for RDP Exceptions Layer
+  cp_mgmt_access_layer:
+    name: RDP Exceptions Layer
+    shared: true
+    applications_and_url_filtering: false
+    content_awareness: false
+    mobile_access: false
+    firewall: true
+    implicit_cleanup_action: drop
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+    #add_default_rule: false
+- name: Task for Web Control Layer
+  cp_mgmt_access_layer:
+    name: Web Control Layer
+    shared: true
+    applications_and_url_filtering: true
+    content_awareness: true
+    mobile_access: false
+    detect_using_x_forward_for: false
+    firewall: true
+    implicit_cleanup_action: drop
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+    #add_default_rule: false

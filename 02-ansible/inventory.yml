@@ -1,0 +1,11 @@
+all:
+  children:
+    check_point:
+      hosts:
+        R82mgmt:
+          ansible_host: "{{ lookup('env','CHECKPOINT_SERVER') }}"
+          ansible_api_key: "{{ lookup('env','CHECKPOINT_API_KEY') }}"
+          ansible_cloud_mgmt_id: "{{ lookup('env','CHECKPOINT_CLOUD_MGMT_ID') }}"
+          ansible_httpapi_use_ssl: true
+          ansible_httpapi_validate_certs: false
+          ansible_network_os: check_point.mgmt.checkpoint

@@ -1,38 +1,3 @@
-# CPX-2025-automation-ws
-Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on experience on the Check Point management API and the intergration with Terraform and Ansible
-
-## Lab 1 - Build simple Check Point policy with IAC using Terraform  
-
-### Prepare the enviroment
-1. In this enviroment we strored the login information in these enviromental variables 
-   * CHECKPOINT_API_KEY 
-   * CHECKPOINT_SERVER
-
-2. Review that the enviromental variables contains the neccessaru values by executing the following command in visual studio code teminal session connected to the orchestration server
-```bash
-   echo $CHECKPOINT_API_KEY
-   echo $CHECKPOINT_SERVER
-```
-
-### Deploy the policy
-You are now ready to deploy the policy using terraform
-```bash
-# enter this folder
-cd ~/CPX-2025-automation-ws/01-terraform
-#
-terraform init
-terraform apply
-# look at the plan and the changes that will be made
-# Accept by answerign yes
-
-```
-### Review changes applied by Terraform
-Go to the Web based Smart Console and see the changes applied by terraform.
-
-**Done**: Go to next lab in 02-ansible folder by executing this command
-```bash
-cd ~/CPX-2025-automation-ws/02-ansible/
-```
 ## Lab 2 - Build and maintain an enterpise Check Point policy with IAC using Ansible   
 
 ### Add latest Check Point management ansible collection
@@ -113,15 +78,3 @@ Go to the Web based Smart Console and check what happened with your object.
 <br>What does state: absent mean?
 
 If you have some spare time you can go to "https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/docs/", pick an example from the list and try to create that object with Ansible.
-
-## Resources:
-- [sk121360 - Check Point APIs homepage](https://support.checkpoint.com/results/sk/sk121360)
-- [Check Point API Reference Guide](https://sc1.checkpoint.com/documents/latest/api_reference/index.html)
-- [Check Point AI Copilot](https://support.checkpoint.com/ai)
-- [Check Point Management Terraform Provider](https://registry.terraform.io/providers/CheckPointSW/checkpoint/latest/docs)
-- [Check Point Ansible collection for the Management Server](https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/)
-- [Check Point Smart-1 Cloud](https://sc1.checkpoint.com/documents/Infinity_Portal/WebAdminGuides/EN/Check-Point-SmartCloud-Admin-Guide/Topics-Smart-1-Cloud/Overview.htm)
-
-
-- [Github Codespaces](https://github.com/codespaces)
-- [VScode](https://code.visualstudio.com/)

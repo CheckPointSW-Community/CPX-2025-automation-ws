@@ -1,0 +1,7 @@
+#export CHECKPOINT_USERNAME="api_user"
+#export CHECKPOINT_PASSWORD="vpn123"
+#export CHECKPOINT_CONTEXT="web_api"
+export CHECKPOINT_SERVER="chkp-jim-xxx-nxx22x11.maas.checkpoint.com"
+export CHECKPOINT_CLOUD_MGMT_ID="77zz4yxx-c457-4646-8e63-d67e55345af8"
+export CHECKPOINT_API_KEY="jBw6xXXxxxIvwoinUI/36A=="
+export CHECKPOINT_TIMEOUT=60

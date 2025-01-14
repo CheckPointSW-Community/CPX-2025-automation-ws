@@ -1,0 +1,25 @@
+- name: Task for unifi_10001
+  cp_mgmt_service_udp:
+    name: unifi_10001
+    accept_replies: true
+    port: '10001'
+    match_by_protocol_signature: false
+    override_default_settings: false
+    session_timeout: 40
+    use_default_session_timeout: true
+    match_for_any: false
+    sync_connections_on_cluster: true
+    aggressive_aging:
+      enable: true
+      timeout: 15
+      use_default_timeout: true
+      default_timeout: 0
+    keep_connections_open_after_policy_installation: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

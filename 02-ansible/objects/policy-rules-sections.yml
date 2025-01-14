@@ -1,0 +1,77 @@
+- name: set-access-section on top of GW Access in Branch_Office_Policy Network
+  cp_mgmt_access_section:
+    layer: Branch_Office_Policy Network
+    name: GW Access
+    position: 1
+    state: '{{state}}'
+    auto_publish_session: true
+- name: set-access-section on top of VPN in Branch_Office_Policy Network
+  cp_mgmt_access_section:
+    layer: Branch_Office_Policy Network
+    name: VPN
+    position: 4
+    state: '{{state}}'
+    auto_publish_session: true
+- name: set-access-section on top of Internet Access in Branch_Office_Policy Network
+  cp_mgmt_access_section:
+    layer: Branch_Office_Policy Network
+    name: Internet Access
+    position: 7
+    state: '{{state}}'
+    auto_publish_session: true
+- name: set-access-section on top of Cleanup in Branch_Office_Policy Network
+  cp_mgmt_access_section:
+    layer: Branch_Office_Policy Network
+    name: Cleanup
+    position: 8
+    state: '{{state}}'
+    auto_publish_session: true
+- name: set-access-section on top of Security Gateways Access in Network
+  cp_mgmt_access_section:
+    layer: Corporate_Policy Network
+    name: Security Gateways Access
+    position: 1
+    state: '{{state}}'
+    auto_publish_session: true
+- name: set-access-section on top of VPN in Network
+  cp_mgmt_access_section:
+    layer: Corporate_Policy Network
+    name: VPN
+    position: 3
+    state: '{{state}}'
+    auto_publish_session: true
+- name: set-access-section on top of Access To Internet in Network
+  cp_mgmt_access_section:
+    layer: Corporate_Policy Network
+    name: Access To Internet
+    position: 4
+    state: '{{state}}'
+    auto_publish_session: true
+- name: set-access-section on top of DMZ in Network
+  cp_mgmt_access_section:
+    layer: Corporate_Policy Network
+    name: DMZ
+    position: 6
+    state: '{{state}}'
+    auto_publish_session: true
+- name: set-access-section on top of Data Center Access in Network
+  cp_mgmt_access_section:
+    layer: Corporate_Policy Network
+    name: Data Center Access
+    position: 12
+    state: '{{state}}'
+    auto_publish_session: true
+- name: set-access-section on top of Temporary Access Grant in Network
+  cp_mgmt_access_section:
+    layer: Corporate_Policy Network
+    name: Temporary Access Grant
+    position: 14
+    state: '{{state}}'
+    auto_publish_session: true
+- name: set-access-section on top of Cleanup in Network
+  cp_mgmt_access_section:
+    layer: Corporate_Policy Network
+    name: Cleanup
+    position: 15
+    state: '{{state}}'
+    auto_publish_session: true

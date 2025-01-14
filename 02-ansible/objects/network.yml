@@ -1,0 +1,112 @@
+- name: Task for Branch Office LAN
+  cp_mgmt_network:
+    name: Branch Office LAN
+    broadcast: allow
+    subnet4: 145.80.110.0
+    subnet_mask: 255.255.255.0
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Data Center LAN
+  cp_mgmt_network:
+    name: Data Center LAN
+    broadcast: allow
+    subnet4: 10.0.0.0
+    subnet_mask: 255.255.255.0
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for HQ LAN
+  cp_mgmt_network:
+    name: HQ LAN
+    broadcast: allow
+    subnet4: 22.20.105.0
+    subnet_mask: 255.255.255.0
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for HR LAN
+  cp_mgmt_network:
+    name: HR LAN
+    broadcast: allow
+    subnet4: 198.51.100.15
+    subnet_mask: 255.255.255.255
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Internal Lab Net
+  cp_mgmt_network:
+    name: Internal Lab Net
+    broadcast: allow
+    subnet4: 10.25.80.0
+    subnet_mask: 255.255.255.0
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Sales LAN
+  cp_mgmt_network:
+    name: Sales LAN
+    broadcast: allow
+    subnet4: 198.51.100.16
+    subnet_mask: 255.255.255.255
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Wireless Guests Network
+  cp_mgmt_network:
+    name: Wireless Guests Network
+    broadcast: allow
+    subnet4: 183.82.0.0
+    subnet_mask: 255.255.0.0
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

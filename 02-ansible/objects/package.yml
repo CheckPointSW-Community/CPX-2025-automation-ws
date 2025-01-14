@@ -1,0 +1,38 @@
+- name: Task for Branch_Office_Policy
+  cp_mgmt_package:
+    name: Branch_Office_Policy
+    access: true
+    threat_prevention: true
+    desktop_security: false
+    qos: false
+    color: black
+    comments: ''
+    installation_targets:
+    - BranchOffice
+    qos_policy_type: recommended
+    tags: []
+    vpn_traditional_mode: false
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Corporate_Policy
+  cp_mgmt_package:
+    name: Corporate_Policy
+    access: true
+    threat_prevention: true
+    desktop_security: false
+    qos: false
+    color: black
+    comments: ''
+    installation_targets:
+    - Corporate-GW
+    qos_policy_type: recommended
+    tags: []
+    vpn_traditional_mode: false
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

@@ -1,0 +1,26 @@
+- name: Task for Http_9090
+  cp_mgmt_service_tcp:
+    name: Http_9090
+    sync_connections_on_cluster: true
+    port: '9090'
+    match_by_protocol_signature: false
+    override_default_settings: false
+    session_timeout: 3600
+    use_default_session_timeout: true
+    match_for_any: false
+    aggressive_aging:
+      enable: true
+      #TASK [Task for Http_9090] ***fatal: [10.0.1.31]: FAILED! => {"changed": false, "msg": "Checkpoint device returned error 400 with message {'code': 'generic_err_invalid_parameter', 'message': 'This API request must contain only one of these - \"use-default-timeout = true\" or \"timeout = <value>\"'} Unpublished changes were discarded"}
+      
+      # timeout: 600
+      use_default_timeout: true
+      default_timeout: 0
+    keep_connections_open_after_policy_installation: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

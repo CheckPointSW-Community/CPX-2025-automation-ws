@@ -1,0 +1,64 @@
+- name: Task for Blocked URLs
+  cp_mgmt_application_site:
+    name: Blocked URLs
+    primary_category: Custom_Application_Site
+    description: ''
+    url_list:
+    - '*.block.com'
+    urls_defined_as_regular_expression: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Customer Service Portal
+  cp_mgmt_application_site:
+    name: Customer Service Portal
+    primary_category: Custom_Application_Site
+    description: ''
+    url_list:
+    - support.my-org.com
+    urls_defined_as_regular_expression: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for mycompany.com
+  cp_mgmt_application_site:
+    name: mycompany.com
+    primary_category: Custom_Application_Site
+    description: ''
+    url_list:
+    - www.mycompany.com
+    urls_defined_as_regular_expression: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Report Portal
+  cp_mgmt_application_site:
+    name: Report Portal
+    primary_category: Custom_Application_Site
+    description: ''
+    url_list:
+    - '*.portal'
+    urls_defined_as_regular_expression: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

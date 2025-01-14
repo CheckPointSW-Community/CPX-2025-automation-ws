@@ -1,0 +1,33 @@
+- name: Task for Internet Services
+  cp_mgmt_service_group:
+    name: Internet Services
+    members:
+    - HTTP_proxy
+    - https
+    - IMAP-SSL
+    - HTTPS_proxy
+    - http
+    - POP3S
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Manage Services
+  cp_mgmt_service_group:
+    name: Manage Services
+    members:
+    - https
+    - GoToMyPC
+    - ssh
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

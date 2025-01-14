@@ -1,0 +1,16 @@
+- name: Task for lsm_1500
+  cp_mgmt_vpn_community_star:
+    name: lsm_1500
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for tesst
+  cp_mgmt_vpn_community_star:
+    name: tesst
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

@@ -1,0 +1,46 @@
+- name: Task for Admins
+  cp_mgmt_access_role:
+    name: Admins
+    networks: any
+    state: '{{state}}'
+
+- name: Task for Finance User
+  cp_mgmt_access_role:
+    name: Finance User
+    state: '{{state}}'
+
+- name: Task for Guests
+  cp_mgmt_access_role:
+    name: Guests
+    networks: any
+    state: '{{state}}'
+
+- name: Task for HR
+  cp_mgmt_access_role:
+    name: HR
+    networks: any
+    state: '{{state}}'
+
+- name: Task for IT Department
+  cp_mgmt_access_role:
+    name: IT Department
+    networks: any
+    state: '{{state}}'
+
+- name: Task for IT Helpdesk Users
+  cp_mgmt_access_role:
+    name: IT Helpdesk Users
+    networks: any
+    state: '{{state}}'
+
+- name: Task for Remote Access Users
+  cp_mgmt_access_role:
+    name: Remote Access Users
+    networks: any
+    state: '{{state}}'
+
+- name: Task for Sales
+  cp_mgmt_access_role:
+    name: Sales
+    networks: any
+    state: '{{state}}'

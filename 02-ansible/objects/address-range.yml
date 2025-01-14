@@ -1,0 +1,30 @@
+- name: Task for DSW Lab Range
+  cp_mgmt_address_range:
+    name: DSW Lab Range
+    ipv4_address_first: 156.53.82.1
+    ipv4_address_last: 156.53.82.23
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for TDF Lab Range
+  cp_mgmt_address_range:
+    name: TDF Lab Range
+    ipv4_address_first: 154.53.2.1
+    ipv4_address_last: 154.53.2.76
+    nat_settings:
+      auto_rule: false
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

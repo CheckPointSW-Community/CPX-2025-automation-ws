@@ -1,0 +1,104 @@
+- name: Task for BranchOffice
+  cp_mgmt_simple_gateway:
+    name: BranchOffice
+    ipv4_address: 198.51.100.7
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Corporate-GW
+  cp_mgmt_simple_gateway:
+    name: Corporate-GW
+    ipv4_address: 198.51.100.5
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for EuropeBranchGw
+  cp_mgmt_simple_gateway:
+    name: EuropeBranchGw
+    ipv4_address: 192.0.2.100
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for HeadquarterGw
+  cp_mgmt_simple_gateway:
+    name: HeadquarterGw
+    ipv4_address: 192.16.26.100
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for HQgw
+  cp_mgmt_simple_gateway:
+    name: HQgw
+    ipv4_address: 192.0.2.200
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for OfficeGw
+  cp_mgmt_simple_gateway:
+    name: OfficeGw
+    ipv4_address: 192.16.26.7
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Remote-1-gw
+  cp_mgmt_simple_gateway:
+    name: Remote-1-gw
+    ipv4_address: 192.0.22.1
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Remote-2-gw
+  cp_mgmt_simple_gateway:
+    name: Remote-2-gw
+    ipv4_address: 192.0.23.1
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Remote-3-gw
+  cp_mgmt_simple_gateway:
+    name: Remote-3-gw
+    ipv4_address: 192.0.24.1
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Remote-4-gw
+  cp_mgmt_simple_gateway:
+    name: Remote-4-gw
+    ipv4_address: 192.0.25.1
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Remote-5-gw
+  cp_mgmt_simple_gateway:
+    name: Remote-5-gw
+    ipv4_address: 192.0.26.1
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for RemoteBranchGw
+  cp_mgmt_simple_gateway:
+    name: RemoteBranchGw
+    ipv4_address: 198.51.100.120
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for ThreatEmulationDevice
+  cp_mgmt_simple_gateway:
+    name: ThreatEmulationDevice
+    ipv4_address: 192.0.111.13
+    state: '{{state}}'
+    ignore_warnings: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

@@ -1,0 +1,16 @@
+- name: Task for Inappropriate Sites
+  cp_mgmt_application_site_group:
+    name: Inappropriate Sites
+    members:
+    - Child Abuse
+    - Spyware / Malicious Sites
+    - Gambling
+    - High Risk
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

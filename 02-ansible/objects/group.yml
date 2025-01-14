@@ -1,0 +1,15 @@
+- name: Task for Corporate LANs
+  cp_mgmt_group:
+    name: Corporate LANs
+    members:
+    - Sales LAN
+    - HQ LAN
+    - HR LAN
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

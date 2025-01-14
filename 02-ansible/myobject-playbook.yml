@@ -1,0 +1,12 @@
+- name: Playbook for rules and objects exported to Ansible from the Check Point API
+  connection: httpapi
+  hosts: R82mgmt
+  gather_facts: false
+  collections:
+  - check_point.mgmt
+  vars:
+    state: present
+  tasks:
+  - include_tasks: '{{item}}'
+    loop:
+    - myobjects/main.yml

@@ -1,0 +1,16 @@
+- name: Task for Partner Access to Corporate's Data Center LAN
+  cp_mgmt_vpn_community_meshed:
+    name: Partner Access to Corporate's Data Center LAN
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
+- name: Task for Site2Site
+  cp_mgmt_vpn_community_meshed:
+    name: Site2Site
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'

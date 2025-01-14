@@ -1,0 +1,28 @@
+- name: Task for Temp Access
+  cp_mgmt_time:
+    name: Temp Access
+    start_now: false
+    start:
+      time: '10:00'
+      iso_8601: '2017-03-26T10:00:00'
+      date: 26-Mar-2017
+      posix: 1490522400000
+    end_never: false
+    end:
+      time: '12:00'
+      iso_8601: '2017-03-26T12:00:00'
+      date: 26-Mar-2017
+      posix: 1490529600000
+    recurrence:
+      pattern: Daily
+      weekdays: []
+      month: Any
+      days: []
+    comments: ''
+    color: black
+    tags: []
+    state: '{{state}}'
+    ignore_warnings: false
+    ignore_errors: false
+    wait_for_task: true
+    wait_for_task_timeout: '30'
