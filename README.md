@@ -1,6 +1,10 @@
 # CPX-2025-automation-ws
 Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on experience on the Check Point management API and the integration with Terraform and Ansible
 
+## Connect to the environment
+1. Open the provided link and go to the tab “Windows Client” in CloudShare.
+<img width="469" alt="image" src="https://github.com/user-attachments/assets/fd5dfee3-08f5-434d-bf5b-0f2d418aec7f" />
+
 ## Lab 1 - Build simple Check Point policy with IAC using Terraform  
 
 ### Prepare the environment
@@ -13,6 +17,11 @@ Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on e
    printenv CHECKPOINT_API_KEY
    printenv CHECKPOINT_SERVER
 ```
+<img width="469" alt="image" src="https://github.com/user-attachments/assets/14d425c0-5427-4930-a2a8-0a1b3c05c4c4" />
+
+3. Use the browser to go to the web based SmartConsole, review the current policy packages and verify that there are no host objects
+<img width="469" alt="image" src="https://github.com/user-attachments/assets/6fd22204-d8df-458a-836a-232258c70962" />
+
 
 ### Deploy the policy
 You are now ready to deploy the policy using terraform
@@ -27,7 +36,7 @@ terraform apply
 
 ```
 ### Review changes applied by Terraform
-Go to the Web based Smart Console and see the changes applied by terraform.
+Go to the Web based Smart Console and review the changes applied by terraform.
 
 **Done**: Go to next lab in 02-ansible folder by executing this command
 ```bash
@@ -58,7 +67,7 @@ code ~/CPX-2025-automation-ws/02-ansible/inventory.ini
 ansible-playbook demo-policy-playbook.yml -i inventory.yml
 ```
 
-Go to the Web based Smart Console and see the changes applied by Ansible. 
+Use the Browser to go to the Web based SmartConsole and see the changes applied by Ansible. 
 You should see new gateways as well as a Branch office and Corporate policy similar to SmartConsole demo mode
 
 Re-run the ansible command, you will see that the modules a idempotent, as your ansible code is equal to the reality no change is made and ansible responds with ok: [R82mgmt] for each task except for the publish task.
