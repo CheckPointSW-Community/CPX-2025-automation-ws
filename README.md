@@ -78,14 +78,9 @@ code ~/CPX-2025-automation-ws/02-ansible/inventory.yml
 ```bash
 ansible-playbook demo-policy-playbook.yml -i inventory.yml
 ```
-
-Use the Browser to go to Web SmartConsole **"admin/Cpwins1!"**, see the changes applied by Ansible. 
-You should see new gateways as well as a Branch office and Corporate policy similar to SmartConsole demo mode
-
-Re-run the ansible command, you will see that the modules are **idempotent**, as your ansible code is equal to the reality no change is made and ansible responds with ok: [R82mgmt] for each task except for the publish task.
-```bash
-ansible-playbook demo-policy-playbook.yml -i inventory.yml
-```
+3. Use the Browser to go to Web SmartConsole **"admin/Cpwins1!"**, see the changes applied by Ansible. 
+<br>You should see new gateways as well as a Branch office and Corporate policy similar to SmartConsole demo mode:
+<br><img width="469" alt="image" src="https://github.com/user-attachments/assets/0b417594-5cd5-4244-b17e-05909615f5fa" />
 
 ### Create you own object using ansible
 To save some time we will use another playbook file in order not run through all the tasks again.
@@ -122,6 +117,11 @@ ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
 Go to  Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
 
+Re-run the playbook myobject-playbook.yml, you will see that the modules are **idempotent**, as your ansible code is equal to the reality no change is made and ansible responds with ok
+```bash
+ansible-playbook myobject-playbook.yml -i inventory.yml
+```
+
 Change the color to your object in **myobjects/main.yml** and re-run the playbook, notice that the status reported for the task is "changed: [mgmt]".
 
 Go to Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
@@ -130,7 +130,7 @@ Set the state of the object in **myobjects/main.yml** to absent
 ```yaml
 state: absent 
 ```
-Re-run the playbook myobject-playbook.yml
+Re-run the playbook myobject-playbook.yml 
 ```bash
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
