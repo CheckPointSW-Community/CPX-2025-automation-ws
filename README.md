@@ -86,8 +86,8 @@ ansible-playbook demo-policy-playbook.yml -i inventory.yml
 To save some time we will use another playbook file in order not run through all the tasks again.
 
 Open the file **myobjects/main.yml** and review the code in there
-```bash
-# The below command will open the file in Visual Studio code 
+<br>The below command will open the file in Visual Studio code
+```bash 
 code ~/CPX-2025-automation-ws/02-ansible/myobjects/main.yml
 ```
 
