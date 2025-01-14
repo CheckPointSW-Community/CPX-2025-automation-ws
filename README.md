@@ -8,9 +8,7 @@ Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on e
 2. On "Windows Client" click on "Reload Window" to allow Visual Studio Code to reconnect to the Orchestration Server
 <br><img width="234" alt="image" src="https://github.com/user-attachments/assets/8907b756-a18d-4711-9b7b-1010bd80f916" />
 
-3. In Visual Studio Code right click on the README.md file and select "Open Preview"
-<br><img width="369" alt="image" src="https://github.com/user-attachments/assets/3c78d293-4f31-4622-af6a-a0d580e1f571" />
-
+3. Follow the instructions in the open README.md in Visual Studio Code
 
 ## Lab 1 - Build simple Check Point policy with IAC using Terraform  
 
