@@ -44,7 +44,7 @@ If you get an notification that "Nothing to do. All requested collections are al
 
 ### Deploy the entprise policy using Ansible
 
-You are now ready to deploy and maintain a enterpise policy using ansible in codespace
+You are now ready to deploy and maintain a enterpise policy using ansible
 ```bash
 # Enter this folder
 cd ~/CPX-2025-automation-ws/02-ansible
@@ -52,7 +52,7 @@ cd ~/CPX-2025-automation-ws/02-ansible
 # Review inventory.yml. 
 # As you can see we are using the enviromental varibles comming from to authenticate.
 # The below comand will open the file in Visual Studio code 
-code inventory.ini
+code ~/CPX-2025-automation-ws/02-ansible/inventory.ini
 
 # Deploy an enterprize policy from this playbook myobject-playbook.yml via ansible using the following command:
 ansible-playbook demo-policy-playbook.yml -i inventory.yml
