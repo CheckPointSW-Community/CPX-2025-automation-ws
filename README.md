@@ -85,7 +85,7 @@ ansible-playbook demo-policy-playbook.yml -i inventory.yml
 ### Create you own object using ansible
 To save some time we will use another playbook file in order not run through all the tasks again.
 
-Open the file **myobjects/main.yml** and review the code in there
+1. Open the file **myobjects/main.yml** and review the code in there
 <br>The below command will open the file in Visual Studio code
 ```bash 
 code ~/CPX-2025-automation-ws/02-ansible/myobjects/main.yml
@@ -111,34 +111,37 @@ In the example we are creating a VPN community of type meshed with color red:
 ```
 **Note:** ```auto_publish_session: true``` will publish the changes for this task when it is being executed
 
-Run the playbook myobject-playbook.yml
+2. Run the playbook **myobject-playbook.yml**
 ```bash
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
 Go to  Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
+<br>![image](https://github.com/user-attachments/assets/4bc15524-1d4d-4e21-9ea7-dec2d867483c)
 
-Re-run the playbook myobject-playbook.yml, you will see that the modules are **idempotent**, as your ansible code is equal to the reality no change is made and ansible responds with ok
+3. Re-run the playbook myobject-playbook.yml, you will see that the modules are **idempotent**, as your ansible code is equal to the reality no change is made and ansible responds with ok
 ```bash
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
+![image](https://github.com/user-attachments/assets/173dea57-bcab-4ecc-9eb3-188875f48977)
 
-Change the color to your object in **myobjects/main.yml** and re-run the playbook, notice that the status reported for the task is "changed: [mgmt]".
 
-Go to Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
+4. Change the color to your object in **myobjects/main.yml** and re-run the playbook, notice that the status reported for the task is "changed: [mgmt]".
 
-Set the state of the object in **myobjects/main.yml** to absent
+5. Go to Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
+
+6. Set the state of the object in **myobjects/main.yml** to absent
 ```yaml
 state: absent 
 ```
-Re-run the playbook myobject-playbook.yml 
+7. Re-run the playbook myobject-playbook.yml 
 ```bash
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
 
-Go to Web Smart Console **"admin/Cpwins1!"**, check what happened with your object.
+8. Go to Web Smart Console **"admin/Cpwins1!"**, check what happened with your object.
 <br>What does `state: absent` mean?
 
-If you have some spare time you can go to https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/docs/, pick an example from the list and try to create that object with Ansible.
+If you have some spare time you can go to https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/docs/, pick an example from the list and try to create that object with Ansible. or you can remove for example a host object in the terraform configuration by deleteing the linse for a host resource block and run terraform apply to see what happens.
 
 ## Resources:
 - [sk121360 - Check Point APIs homepage](https://support.checkpoint.com/results/sk/sk121360)
