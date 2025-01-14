@@ -32,7 +32,7 @@ resource "checkpoint_management_access_rule" "blockrule1" {
                 vpn = "Any"
                 layer = checkpoint_management_access_layer.terraform_Perimeter_URLF.name
                 track = {
-                  accounting = false
+                  accounting = true
 	                alert = "none"
                   enable_firewall_session = true
                   per_connection = true
@@ -60,7 +60,7 @@ resource "checkpoint_management_access_rule" "allowrule2" {
                 vpn = "Any"
                 layer = checkpoint_management_access_layer.terraform_Perimeter_URLF.name
                 track = {
-                  accounting = false
+                  accounting = true
 	                alert = "none"
                   enable_firewall_session = true
                   per_connection = true
