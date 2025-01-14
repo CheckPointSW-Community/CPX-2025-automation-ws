@@ -38,7 +38,7 @@ terraform.rc
 
 #Check Point session and fingerorint files
 fingerprints.json
-sid.json
+*.sid.json
 
 # Ignore VS Code files
 *.code-workspace
