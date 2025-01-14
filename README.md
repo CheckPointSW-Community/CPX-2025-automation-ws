@@ -32,18 +32,17 @@ printenv CHECKPOINT_SERVER
 
 ### Deploy the policy
 You are now ready to deploy the policy using terraform
+
+1. Change to the 01-terraform folder
 ```bash
-# enter this folder
 cd ~/CPX-2025-automation-ws/01-terraform
-#
-terraform init
-terraform apply
-# look at the plan and the changes that will be made
-# Accept by answering yes
 ```
+2. Run `terraform init` to download the provider and initialize the coresponding modules
+3. Run `terraform apply` and look at the plan and the changes that will be made
+4. Accept by answering **yes**
 
 ### Review changes applied by Terraform
-Go to the Web based Smart Console and review the changes applied by terraform.
+1. Go to the Web based Smart Console and review the changes applied by terraform.
 
 **Done**: Go to next lab in 02-ansible folder by executing this command
 ```bash
