@@ -3,7 +3,7 @@ Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on e
 
 ## Connect to the environment
 1. Open the provided link and go to the tab “Windows Client” in CloudShare.
-<img width="469" alt="image" src="https://github.com/user-attachments/assets/fd5dfee3-08f5-434d-bf5b-0f2d418aec7f" />
+<br><img width="469" alt="image" src="https://github.com/user-attachments/assets/fd5dfee3-08f5-434d-bf5b-0f2d418aec7f" />
 
 ## Lab 1 - Build simple Check Point policy with IAC using Terraform  
 
@@ -17,10 +17,10 @@ Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on e
    printenv CHECKPOINT_API_KEY
    printenv CHECKPOINT_SERVER
 ```
-<img width="469" alt="image" src="https://github.com/user-attachments/assets/14d425c0-5427-4930-a2a8-0a1b3c05c4c4" />
+<br><img width="469" alt="image" src="https://github.com/user-attachments/assets/14d425c0-5427-4930-a2a8-0a1b3c05c4c4" />
 
 3. Use the browser to go to the web based SmartConsole, review the current policy packages and verify that there are no host objects
-<img width="469" alt="image" src="https://github.com/user-attachments/assets/6fd22204-d8df-458a-836a-232258c70962" />
+<br><img width="469" alt="image" src="https://github.com/user-attachments/assets/6fd22204-d8df-458a-836a-232258c70962" />
 
 
 ### Deploy the policy
@@ -33,8 +33,8 @@ terraform init
 terraform apply
 # look at the plan and the changes that will be made
 # Accept by answering yes
-
 ```
+
 ### Review changes applied by Terraform
 Go to the Web based Smart Console and review the changes applied by terraform.
 
@@ -45,7 +45,7 @@ cd ~/CPX-2025-automation-ws/02-ansible/
 ## Lab 2 - Build and maintain an enterprise Check Point policy with IAC using Ansible   
 
 ### Add latest Check Point management ansible collection
-As the installation instructions per https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/ install the collection with this command
+As per installation instructions "https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/" install the collection with this command
 ```bash
 ansible-galaxy collection install check_point.mgmt
 ```
@@ -70,7 +70,7 @@ ansible-playbook demo-policy-playbook.yml -i inventory.yml
 Use the Browser to go to the Web based SmartConsole and see the changes applied by Ansible. 
 You should see new gateways as well as a Branch office and Corporate policy similar to SmartConsole demo mode
 
-Re-run the ansible command, you will see that the modules a idempotent, as your ansible code is equal to the reality no change is made and ansible responds with ok: [R82mgmt] for each task except for the publish task.
+Re-run the ansible command, you will see that the modules are **idempotent**, as your ansible code is equal to the reality no change is made and ansible responds with ok: [R82mgmt] for each task except for the publish task.
 ```bash
 ansible-playbook demo-policy-playbook.yml -i inventory.yml
 ```
@@ -118,8 +118,13 @@ Set the state of the object in **myobjects/main.yml** to absent
 ```yaml
 state: absent 
 ```
+Re-run the playbook myobject-playbook.yml
+```bash
+ansible-playbook myobject-playbook.yml -i inventory.yml
+```
+
 Go to the Web based Smart Console and check what happened with your object.
-<br>What does state: absent mean?
+<br>What does "state: absent" mean?
 
 If you have some spare time you can go to https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/docs/, pick an example from the list and try to create that object with Ansible.
 
