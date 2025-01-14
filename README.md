@@ -26,7 +26,7 @@ printenv CHECKPOINT_SERVER
 ```
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/14d425c0-5427-4930-a2a8-0a1b3c05c4c4" />
 
-3. Use the browser to go to the web based SmartConsole, review the current policy packages and verify that there are no host objects
+3. Use the browser to go to Web SmartConsole **"admin/Cpwins1!"**, review the current policy packages and verify that there are no host objects
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/6fd22204-d8df-458a-836a-232258c70962" />
 
 
@@ -42,7 +42,7 @@ cd ~/CPX-2025-automation-ws/01-terraform
 4. Accept by answering **yes**
 
 ### Review changes applied by Terraform
-1. Go to the Web based Smart Console and review the changes applied by terraform.
+1. Go to Web SmartConsole **"admin/Cpwins1!"**, review the changes applied by terraform.
 
 **Done**: Go to next lab in 02-ansible folder by executing this command
 ```bash
@@ -73,7 +73,7 @@ code ~/CPX-2025-automation-ws/02-ansible/inventory.ini
 ansible-playbook demo-policy-playbook.yml -i inventory.yml
 ```
 
-Use the Browser to go to the Web based SmartConsole and see the changes applied by Ansible. 
+Use the Browser to go to Web SmartConsole **"admin/Cpwins1!"**, see the changes applied by Ansible. 
 You should see new gateways as well as a Branch office and Corporate policy similar to SmartConsole demo mode
 
 Re-run the ansible command, you will see that the modules are **idempotent**, as your ansible code is equal to the reality no change is made and ansible responds with ok: [R82mgmt] for each task except for the publish task.
@@ -114,11 +114,11 @@ Run the playbook myobject-playbook.yml
 ```bash
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
-Go to the Web based Smart Console in Smart-1 Cloud and see the changes applied by Ansible.
+Go to  Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
 
 Change the color to your object in **myobjects/main.yml** and re-run the playbook, notice that the status reported for the task is "changed: [mgmt]".
 
-Go to the Web based Smart Console and see the changes applied by Ansible.
+Go to Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
 
 Set the state of the object in **myobjects/main.yml** to absent
 ```yaml
@@ -129,8 +129,8 @@ Re-run the playbook myobject-playbook.yml
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
 
-Go to the Web based Smart Console and check what happened with your object.
-<br>What does "state: absent" mean?
+Go to Web Smart Console **"admin/Cpwins1!"**, check what happened with your object.
+<br>What does `state: absent` mean?
 
 If you have some spare time you can go to https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/docs/, pick an example from the list and try to create that object with Ansible.
 
