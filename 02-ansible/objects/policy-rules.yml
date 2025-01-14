@@ -1453,7 +1453,7 @@
     service:
     - Facebook
     - LinkedIn
-    - Twitter
+    - X (Twitter)
     
     action_settings:
       enable_identity_captive_portal: false
