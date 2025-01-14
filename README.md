@@ -71,7 +71,7 @@ You are now ready to deploy and maintain an enterprise policy using ansible
 1. Review inventory.yml, as you can see we are using the environment variables to authenticate.
 <br>The below command will open the file in Visual Studio code 
 ```bash
-code ~/CPX-2025-automation-ws/02-ansible/inventory.ini
+code ~/CPX-2025-automation-ws/02-ansible/inventory.yml
 ```
 
 2. Deploy an enterprise policy from this playbook myobject-playbook.yml via ansible using the following command:
