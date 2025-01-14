@@ -21,8 +21,8 @@ Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on e
 
 2. Review that the environmental variables contains the necessary values by executing the following command in visual studio code terminal session connected to the orchestration server
 ```bash
-   printenv CHECKPOINT_API_KEY
-   printenv CHECKPOINT_SERVER
+printenv CHECKPOINT_API_KEY
+printenv CHECKPOINT_SERVER
 ```
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/14d425c0-5427-4930-a2a8-0a1b3c05c4c4" />
 
