@@ -38,11 +38,16 @@ You are now ready to deploy the policy using terraform
 cd ~/CPX-2025-automation-ws/01-terraform
 ```
 2. Run `terraform init` to download the provider and initialize the coresponding modules
-3. Run `terraform apply` and look at the plan and the changes that will be made
+3. Run `terraform apply` and look at the plan and the 33 changes that will be made
 4. Accept by answering **yes**
 
+5. Run `terraform apply` again and see that there will be no changes made since your security infrastructure matches your configuration
+<br>You should see the following:
+<br><img width="469" alt="image" src="https://github.com/user-attachments/assets/77e7f39b-6d10-4b34-b235-0902d4ddba48" />
+
 ### Review changes applied by Terraform
-1. Go to Web SmartConsole **"admin/Cpwins1!"**, review the changes applied by terraform.
+1. Go to Web SmartConsole **"admin/Cpwins1!"**, review some of the changes applied by terraform.
+<br><img width="469" alt="image" src="https://github.com/user-attachments/assets/0e090de5-9a2e-4bd2-ba20-3b7edb6ab2de" />
 
 **Done**: Go to next lab in 02-ansible folder by executing this command
 ```bash
@@ -56,20 +61,22 @@ As per installation instructions "https://galaxy.ansible.com/ui/repo/published/c
 ansible-galaxy collection install check_point.mgmt
 ```
 If you get an notification that "Nothing to do. All requested collections are already installed" run the install of the collection again using `--force`
+```bash
+ansible-galaxy collection install check_point.mgmt --force
+```
 
 ### Deploy the enterprise policy using Ansible
 
 You are now ready to deploy and maintain an enterprise policy using ansible
+1. Review inventory.yml. 
+<br>As you can see we are using the environment variables coming from to authenticate.
+<br>The below command will open the file in Visual Studio code 
 ```bash
-# Enter this folder
-cd ~/CPX-2025-automation-ws/02-ansible
-
-# Review inventory.yml. 
-# As you can see we are using the environment variables coming from to authenticate.
-# The below command will open the file in Visual Studio code 
 code ~/CPX-2025-automation-ws/02-ansible/inventory.ini
+```
 
-# Deploy an enterprise policy from this playbook myobject-playbook.yml via ansible using the following command:
+2. Deploy an enterprise policy from this playbook myobject-playbook.yml via ansible using the following command:
+```bash
 ansible-playbook demo-policy-playbook.yml -i inventory.yml
 ```
 
