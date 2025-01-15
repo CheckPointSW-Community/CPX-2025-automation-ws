@@ -2,13 +2,11 @@
 Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on experience on the Check Point management API and the integration with Terraform and Ansible
 
 ## Connect to the environment
-1. Open the provided link and go to the tab “Windows Client” in CloudShare.
-<br><img width="469" alt="image" src="https://github.com/user-attachments/assets/1cfe5a7e-690d-47c8-8e3e-07db448835b6" />
+1. Open the provided link and go to the tab “**Windows Client**” in CloudShare.
+2. On "**Windows Client**" click on "**Reload Window**" to allow Visual Studio Code to reconnect to the Orchestration Server
+<br><img width="469" alt="image" src="https://github.com/user-attachments/assets/b9d6a66c-39bf-4bd9-86e5-e96583f1558b" />
 
-2. On "Windows Client" click on "Reload Window" to allow Visual Studio Code to reconnect to the Orchestration Server
-<br><img width="234" alt="image" src="https://github.com/user-attachments/assets/8907b756-a18d-4711-9b7b-1010bd80f916" />
-
-3. Follow the instructions in the open README.md in Visual Studio Code
+3. Follow the instructions in the open **README.md** in Visual Studio Code
 
 ## Lab 1 - Build simple Check Point policy with IAC using Terraform  
 
