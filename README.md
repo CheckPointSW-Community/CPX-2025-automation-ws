@@ -3,7 +3,7 @@ Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on e
 
 ## Connect to the environment
 1. Open the provided link and go to the tab “Windows Client” in CloudShare.
-<br><img width="469" alt="image" src="https://github.com/user-attachments/assets/fd5dfee3-08f5-434d-bf5b-0f2d418aec7f" />
+<br><img width="469" alt="image" src="https://github.com/user-attachments/assets/1cfe5a7e-690d-47c8-8e3e-07db448835b6" />
 
 2. On "Windows Client" click on "Reload Window" to allow Visual Studio Code to reconnect to the Orchestration Server
 <br><img width="234" alt="image" src="https://github.com/user-attachments/assets/8907b756-a18d-4711-9b7b-1010bd80f916" />
