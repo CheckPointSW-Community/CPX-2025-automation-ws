@@ -25,6 +25,27 @@ printenv CHECKPOINT_SERVER
 3. Use the browser to go to Web SmartConsole **"admin/Cpwins1!"**, review the current policy packages and verify that there are no host objects
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/6fd22204-d8df-458a-836a-232258c70962" />
 
+### Review Terraform configuration
+1. Review **main.tf**, terraform configuration file as you can we are two aliases for the provide configuration allowing us to login to diffrent domains in the management server in one terraform run.
+<br>The code block `module "admins" {` points to the folder **system-data** containig the terraform configuration to create an admin
+<br>The code block `module "policy" {` points to the folder **policy** containig the terraform configuration to create the Security Policy
+<br>In the **checkpoint_management_publish** code blocks you can see that it is configured to trigger when there is a configuration change on the files in the folders system-data and policy, as well as forcing it to run on terrraform destroy actions.
+<br>The below command will open the **~/CPX-2025-automation-ws/01-terraform/main.tf** file in Visual Studio code 
+```bash
+code ~/CPX-2025-automation-ws/01-terraform/main.tf
+```
+
+2. Review **admins.tf**, terraform configuration file and review the code block to create a adminstrator,
+<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/system-data/admins.tf** Visual Studio code 
+```bash
+code ~/CPX-2025-automation-ws/01-terraform/system-data/admins.tf
+```
+
+3. Review **hosts.tf**, terraform configuration file and review the code block to add host objects to the security configuration,
+<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf** Visual Studio code 
+```bash
+code ~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf
+```
 
 ### Deploy the policy
 You are now ready to deploy the policy using terraform
@@ -45,6 +66,26 @@ cd ~/CPX-2025-automation-ws/01-terraform
 1. Go to Web SmartConsole **"admin/Cpwins1!"**, review some of the changes applied by terraform.
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/0e090de5-9a2e-4bd2-ba20-3b7edb6ab2de" />
 
+### Change your Terraform configuration and review the changes
+1. Open **hosts.tf**, terraform configuration and change the color of the host object **azure_lb_health_check** to **red**
+<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf** Visual Studio code 
+```bash
+code ~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf
+```
+2. Run `terraform apply`, look at the plan and try to understand what changes terraform will make
+3. Accept by answering **yes**
+4. Go to Web SmartConsole **"admin/Cpwins1!"**, and see if the collor of the host objecy has changed.
+
+### Destroy a Terraform resourse and review the changes
+1. Open **hosts.tf**, terraform configuration and remove the code block for the resource "**azurelbhealthcheck**"
+<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf** Visual Studio code 
+```bash
+code ~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf
+```
+2. Run `terraform apply`, look at the plan and try to understand what changes terraform will make
+3. Accept by answering **yes**
+4. Go to Web SmartConsole **"admin/Cpwins1!"**, and verify that the host object has been removed
+
 **Done**: Go to next lab in 02-ansible folder by executing this command
 ```bash
 cd ~/CPX-2025-automation-ws/02-ansible/
@@ -64,13 +105,13 @@ ansible-galaxy collection install check_point.mgmt --force
 ### Deploy the enterprise policy using Ansible
 
 You are now ready to deploy and maintain an enterprise policy using ansible
-1. Review inventory.yml, as you can see we are using the environment variables to authenticate.
-<br>The below command will open the file in Visual Studio code 
+1. Review **inventory.yml**, as you can see we are using the environment variables to authenticate.
+<br>The below command will open the **~/CPX-2025-automation-ws/02-ansible/inventory.yml** file in Visual Studio code 
 ```bash
 code ~/CPX-2025-automation-ws/02-ansible/inventory.yml
 ```
 
-2. Deploy an enterprise policy from this playbook myobject-playbook.yml via ansible using the following command:
+2. Deploy an enterprise policy from this playbook **myobject-playbook.yml** via ansible using the following command:
 ```bash
 ansible-playbook demo-policy-playbook.yml -i inventory.yml
 ```
@@ -78,11 +119,11 @@ ansible-playbook demo-policy-playbook.yml -i inventory.yml
 <br>You should see new gateways as well as a Branch office and Corporate policy similar to SmartConsole demo mode:
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/0b417594-5cd5-4244-b17e-05909615f5fa" />
 
-### Create you own object using ansible
+### Create and change youre own object using ansible
 To save some time we will use another playbook file in order not run through all the tasks again.
 
 1. Open the file **myobjects/main.yml** and review the code in there
-<br>The below command will open the file in Visual Studio code
+<br>The below command will open the **~/CPX-2025-automation-ws/02-ansible/myobjects/main.yml** file in Visual Studio code
 ```bash 
 code ~/CPX-2025-automation-ws/02-ansible/myobjects/main.yml
 ```
@@ -114,12 +155,11 @@ ansible-playbook myobject-playbook.yml -i inventory.yml
 Go to  Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
 <br>![image](https://github.com/user-attachments/assets/4bc15524-1d4d-4e21-9ea7-dec2d867483c)
 
-3. Re-run the playbook myobject-playbook.yml, you will see that the modules are **idempotent**, as your ansible code is equal to the reality no change is made and ansible responds with ok
+3. Re-run the playbook **myobject-playbook.yml**, you will see that the modules are **idempotent**. Since your ansible code is equal to the reality. no change is made and ansible responds with ok
 ```bash
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
 ![image](https://github.com/user-attachments/assets/173dea57-bcab-4ecc-9eb3-188875f48977)
-
 
 4. Change the color to your object in **myobjects/main.yml** and re-run the playbook, notice that the status reported for the task is "changed: [R82mgmt]".
 
@@ -137,7 +177,7 @@ ansible-playbook myobject-playbook.yml -i inventory.yml
 8. Go to Web Smart Console **"admin/Cpwins1!"**, check what happened with your object.
 <br>What does `state: absent` mean?
 
-If you have some spare time you can go to https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/docs/, pick an example from the list and try to create that object with Ansible. or you can remove for example a host object in the terraform configuration by deleteing the linse for a host resource block and run terraform apply to see what happens.
+**Done**: If you have some spare time you can go to https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/docs/, pick an example from the list and try to create that object with Ansible, or make some changes to your terraform configuration to see what happens.
 
 ## Resources:
 - [sk121360 - Check Point APIs homepage](https://support.checkpoint.com/results/sk/sk121360)
@@ -145,8 +185,10 @@ If you have some spare time you can go to https://galaxy.ansible.com/ui/repo/pub
 - [Check Point AI Copilot](https://support.checkpoint.com/ai)
 - [Check Point Management Terraform Provider](https://registry.terraform.io/providers/CheckPointSW/checkpoint/latest/docs)
 - [Check Point Ansible collection for the Management Server](https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/)
+- [Github - Check Point Software Technologies Ltd.](https://github.com/checkpointsw)
+- [Github - Check Point CheckMates Community](https://github.com/checkpointsw-community)
+- [CheckMates - API / CLI Discussion](https://community.checkpoint.com/t5/API-CLI-Discussion/bd-p/codehub)
+- - [CheckMates - Ansible Discussion](https://community.checkpoint.com/t5/Ansible/bd-p/ansible)
 - [Check Point Smart-1 Cloud](https://sc1.checkpoint.com/documents/Infinity_Portal/WebAdminGuides/EN/Check-Point-SmartCloud-Admin-Guide/Topics-Smart-1-Cloud/Overview.htm)
-
-
 - [Github Codespaces](https://github.com/codespaces)
 - [VScode](https://code.visualstudio.com/)
