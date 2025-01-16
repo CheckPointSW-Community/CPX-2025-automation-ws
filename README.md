@@ -42,7 +42,7 @@ code ~/CPX-2025-automation-ws/01-terraform/system-data/admins.tf
 ```
 
 3. Review **hosts.tf**, terraform configuration file and review the code block to add host objects to the security configuration,
-<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf** Visual Studio code 
+<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf** Visual Studio code 
 ```bash
 code ~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf
 ```
@@ -68,9 +68,9 @@ cd ~/CPX-2025-automation-ws/01-terraform
 
 ### Change your Terraform configuration and review the changes
 1. Open **hosts.tf**, terraform configuration and change the color of the host object **azure_lb_health_check** to **red**
-<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf** Visual Studio code 
+<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf** Visual Studio code 
 ```bash
-code ~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf
+code ~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf
 ```
 2. Run `terraform apply`, look at the plan and try to understand what changes terraform will make
 3. Accept by answering **yes**
