@@ -44,7 +44,7 @@ code ~/CPX-2025-automation-ws/01-terraform/system-data/admins.tf
 3. Review **hosts.tf**, terraform configuration file and review the code block to add host objects to the security configuration,
 <br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf** Visual Studio code 
 ```bash
-code ~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf
+code ~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf
 ```
 
 ### Deploy the policy
