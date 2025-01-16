@@ -22,7 +22,8 @@ printenv CHECKPOINT_SERVER
 ```
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/14d425c0-5427-4930-a2a8-0a1b3c05c4c4" />
 
-3. Use the browser to go to Web SmartConsole **"admin/Cpwins1!"**, review the current policy packages and verify that there are no host objects
+3. Use the Microsoft Edge browser to go to Web SmartConsole **"admin/Cpwins1!"**, review the current policy packages and verify that there are no host objects
+<br><img width="200" alt="image" src="https://github.com/user-attachments/assets/fc23f4c3-237a-4a48-9d03-d3d2cd727f39" />
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/6fd22204-d8df-458a-836a-232258c70962" />
 
 ### Review Terraform configuration
