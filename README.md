@@ -26,7 +26,7 @@ printenv CHECKPOINT_SERVER
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/6fd22204-d8df-458a-836a-232258c70962" />
 
 ### Review Terraform configuration
-1. Review **main.tf**, terraform configuration file, as you can we are two aliases for the provide configuration allowing us to login to diffrent domains in the management server in one terraform run.
+1. Review **main.tf** terraform configuration file, as you can we are two aliases for the provide configuration allowing us to login to diffrent domains in the management server in one terraform run.
 <br>The code block `module "admins" {` points to the folder **system-data** containig the terraform configuration to create an admin
 <br>The code block `module "policy" {` points to the folder **policy** containig the terraform configuration to create the Security Policy
 <br>In the **checkpoint_management_publish** code blocks you can see that it is configured to trigger when there is a configuration change on the files in the folders system-data and policy, as well as forcing it to run on terrraform destroy actions.
