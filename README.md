@@ -161,7 +161,7 @@ ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
 ![image](https://github.com/user-attachments/assets/173dea57-bcab-4ecc-9eb3-188875f48977)
 
-4. Change the color to your object in **myobjects/main.yml** and re-run the playbook, notice that the status reported for the task is "changed: [R82mgmt]".
+4. Change the color to `color: sea green` for the object in **myobjects/main.yml** and re-run the playbook, notice that the status reported for the task is "changed: [R82mgmt]".
 
 5. Go to Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
 
