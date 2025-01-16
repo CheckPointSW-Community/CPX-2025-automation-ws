@@ -78,9 +78,9 @@ code ~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf
 
 ### Destroy a Terraform resourse and review the changes
 1. Open **hosts.tf**, terraform configuration and remove the code block for the resource "**azurelbhealthcheck**"
-<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf** Visual Studio code 
+<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf** Visual Studio code 
 ```bash
-code ~/CPX-2025-automation-ws/01-terraform/01-terraform/policy/hosts.tf
+code ~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf
 ```
 2. Run `terraform apply`, look at the plan and try to understand what changes terraform will make
 3. Accept by answering **yes**
