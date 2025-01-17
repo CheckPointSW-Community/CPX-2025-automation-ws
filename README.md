@@ -70,13 +70,18 @@ cd ~/CPX-2025-automation-ws/01-terraform
 
 ### Change your Terraform configuration and review the changes
 1. Open **hosts.tf**, terraform configuration and change the color of the host object **azure_lb_health_check** to **red**
+
+>[!TIP]
+>Once you edited the file in visual studio code you can press `ctrl+s` to save your changes
+
 <br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf** Visual Studio code 
 ```bash
 code ~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf
 ```
-2. Run `terraform apply`, look at the plan and try to understand what changes terraform will make
-3. Accept by answering **yes**
-4. Go to Web SmartConsole **"admin/Cpwins1!"**, and see if the color of the host object has changed.
+2. Save the changes to the file by pressing `ctrl+s`
+3. Run `terraform apply`, look at the plan and try to understand what changes terraform will make
+4. Accept by answering **yes**
+5. Go to Web SmartConsole **"admin/Cpwins1!"**, and see if the color of the host object has changed.
 
 ### Destroy a Terraform resource and review the changes
 1. Open **hosts.tf**, terraform configuration and remove the code block for the resource "**azurelbhealthcheck**"
@@ -84,9 +89,10 @@ code ~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf
 ```bash
 code ~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf
 ```
-2. Run `terraform apply`, look at the plan and try to understand what changes terraform will make
-3. Accept by answering **yes**
-4. Go to Web SmartConsole **"admin/Cpwins1!"**, and verify that the host object has been removed
+2. Save the changes to the file by pressing `ctrl+s`
+3. Run `terraform apply`, look at the plan and try to understand what changes terraform will make
+4. Accept by answering **yes**
+5. Go to Web SmartConsole **"admin/Cpwins1!"**, and verify that the host object has been removed
 
 **Done**: Go to next lab in 02-ansible folder by executing this command
 ```bash
@@ -95,7 +101,7 @@ cd ~/CPX-2025-automation-ws/02-ansible/
 ## Lab 2 - Build and maintain an enterprise Check Point policy with IAC using Ansible   
 
 ### Add latest Check Point management ansible collection
-Install the collection with this command:
+Install the Management collection with this command:
 ```bash
 ansible-galaxy collection install check_point.mgmt
 ```
@@ -103,9 +109,13 @@ If you get an notification that "Nothing to do. All requested collections are al
 ```bash
 ansible-galaxy collection install check_point.mgmt --force
 ```
+### Add latest Check Point Gaia ansible collection
+Install the Gaia collection with this command:
+```bash
+ansible-galaxy collection install check_point.gaia
+```
 
 ### Deploy the enterprise policy using Ansible
-
 You are now ready to deploy and maintain an enterprise policy using ansible
 1. Review **inventory.yml**, as you can see we are using the environment variables to authenticate.
 <br>The below command will open the **~/CPX-2025-automation-ws/02-ansible/inventory.yml** file in Visual Studio code 
@@ -113,7 +123,7 @@ You are now ready to deploy and maintain an enterprise policy using ansible
 code ~/CPX-2025-automation-ws/02-ansible/inventory.yml
 ```
 
-2. Deploy an enterprise policy from this playbook **myobject-playbook.yml** via ansible using the following command:
+2. Deploy an enterprise policy from this playbook **demo-policy-playbook.yml** via ansible using the following command:
 ```bash
 ansible-playbook demo-policy-playbook.yml -i inventory.yml
 ```
@@ -121,7 +131,7 @@ ansible-playbook demo-policy-playbook.yml -i inventory.yml
 <br>You should see new gateways as well as a Branch office and Corporate policy similar to SmartConsole demo mode:
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/0b417594-5cd5-4244-b17e-05909615f5fa" />
 
-### Create and change youre own object using ansible
+### Create and change your own object using ansible
 To save some time we will use another playbook file in order not run through all the tasks again.
 
 1. Open the file **myobjects/main.yml** and review the code in there
@@ -148,35 +158,48 @@ In the example we are creating a VPN community of type meshed with color red:
       encryption_algorithm: aes-gcm-128
     auto_publish_session: true
 ```
-**Note:** ```auto_publish_session: true``` will publish the changes for this task when it is being executed
+>[!NOTE]
+> ```auto_publish_session: true``` will publish the changes for this task when it is being executed
 
-2. Run the playbook **myobject-playbook.yml**
+2. Save the changes to the file by pressing `ctrl+s`
+3. Run the playbook **myobject-playbook.yml**
 ```bash
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
 Go to  Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
 <br>![image](https://github.com/user-attachments/assets/4bc15524-1d4d-4e21-9ea7-dec2d867483c)
 
-3. Re-run the playbook **myobject-playbook.yml**, you will see that the modules are **idempotent**. Since your ansible code is equal to the reality. no change is made and ansible responds with ok
+### Test idempotency of your playbook and the modules
+1. Re-run the playbook **myobject-playbook.yml**, you will see that the modules are **idempotent**. Since your ansible code is equal to the reality. no change is made and ansible responds with ok
 ```bash
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
 ![image](https://github.com/user-attachments/assets/173dea57-bcab-4ecc-9eb3-188875f48977)
 
-4. Change the color to `color: sea green` for the object in **myobjects/main.yml** and re-run the playbook, notice that the status reported for the task is "changed: [R82mgmt]".
+>[!NOTE]
+> A request method is considered **idempotent** if the intended effect on the server of multiple identical requests with that method is the same as the effect for a single such request.
 
-5. Go to Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
-
-6. Set the state of the object in **myobjects/main.yml** to absent
-```yaml
-state: absent 
-```
-7. Re-run the playbook myobject-playbook.yml 
+### Change your ansible playbook and review the changes
+1. Change the color to `color: sea green` for the object in **myobjects/main.yml**
+2. Save the changes to the file by pressing `ctrl+s`
+3. Re-run the playbook, notice that the status reported for the task is "changed: [R82mgmt]".
 ```bash
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
 
-8. Go to Web Smart Console **"admin/Cpwins1!"**, check what happened with your object.
+4. Go to Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
+
+### Remove the object by making it absent
+1. Set the state of the object in **myobjects/main.yml** to absent
+```yaml
+state: absent 
+```
+2. Re-run the playbook myobject-playbook.yml 
+```bash
+ansible-playbook myobject-playbook.yml -i inventory.yml
+```
+
+3. Go to Web Smart Console **"admin/Cpwins1!"**, check what happened with your object.
 <br>What does `state: absent` mean?
 
 **Done**: If you have some spare time you can go to https://galaxy.ansible.com/ui/namespaces/check_point/, pick an example from the management collection list and try to create that object with Ansible, or make some changes to your terraform configuration to see what happens.
@@ -189,8 +212,12 @@ ansible-playbook myobject-playbook.yml -i inventory.yml
 - [Check Point Ansible collection for the Management Server](https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/)
 - [Github - Check Point Software Technologies Ltd.](https://github.com/checkpointsw)
 - [Github - Check Point CheckMates Community](https://github.com/checkpointsw-community)
+  -  [AnsibleFest2020-Demos](https://github.com/CheckPointSW-Community/AnsibleFest2020-Demos)
+  -  [chkp-api-examples](https://github.com/CheckPointSW-Community/chkp-api-examples)
+  -  [Ansible_CHKP_labs](https://github.com/CheckPointSW-Community/Ansible_CHKP_labs)
+  -  [Terraform_CHKP_labs](https://github.com/CheckPointSW-Community/Terraform_CHKP_labs)
 - [CheckMates - API / CLI Discussion](https://community.checkpoint.com/t5/API-CLI-Discussion/bd-p/codehub)
-- - [CheckMates - Ansible Discussion](https://community.checkpoint.com/t5/Ansible/bd-p/ansible)
+- [CheckMates - Ansible Discussion](https://community.checkpoint.com/t5/Ansible/bd-p/ansible)
 - [Check Point Smart-1 Cloud](https://sc1.checkpoint.com/documents/Infinity_Portal/WebAdminGuides/EN/Check-Point-SmartCloud-Admin-Guide/Topics-Smart-1-Cloud/Overview.htm)
 - [Github Codespaces](https://github.com/codespaces)
 - [VScode](https://code.visualstudio.com/)
