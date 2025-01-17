@@ -22,21 +22,22 @@ printenv CHECKPOINT_SERVER
 ```
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/14d425c0-5427-4930-a2a8-0a1b3c05c4c4" />
 
-3. Use the Microsoft Edge browser to go to Web SmartConsole **"admin/Cpwins1!"**, review the current policy packages and verify that there are no host objects
+3. Use the Microsoft Edge browser to go to Web SmartConsole **"admin/Cpwins1!"**, review the current policy packages and verify that there are no host objects in the objects pane on the right side of SmartConsole
 <br><img width="200" alt="image" src="https://github.com/user-attachments/assets/fc23f4c3-237a-4a48-9d03-d3d2cd727f39" />
-<br><img width="469" alt="image" src="https://github.com/user-attachments/assets/6fd22204-d8df-458a-836a-232258c70962" />
+<br><img width="569" alt="image" src="https://github.com/user-attachments/assets/140e7778-83e2-41d2-8a66-c3fc0e1d4ba9" />
+
 
 ### Review Terraform configuration
-1. Review **main.tf** terraform configuration file, as you can we are two aliases for the provide configuration allowing us to login to diffrent domains in the management server in one terraform run.
-<br>The code block `module "admins" {` points to the folder **system-data** containig the terraform configuration to create an admin
-<br>The code block `module "policy" {` points to the folder **policy** containig the terraform configuration to create the Security Policy
-<br>In the **checkpoint_management_publish** code blocks you can see that it is configured to trigger when there is a configuration change on the files in the folders system-data and policy, as well as forcing it to run on terrraform destroy actions.
+1. Review **main.tf** terraform configuration file, as you can we are two aliases for the provide configuration allowing us to login to different domains in the management server in one terraform run.
+<br>The code block `module "admins" {` points to the folder **system-data** containing  the terraform configuration to create an admin
+<br>The code block `module "policy" {` points to the folder **policy** containing  the terraform configuration to create the Security Policy
+<br>In the **checkpoint_management_publish** code blocks you can see that it is configured to trigger when there is a configuration change on the files in the folders system-data and policy, as well as forcing it to run on terraform destroy actions.
 <br>The below command will open the **~/CPX-2025-automation-ws/01-terraform/main.tf** file in Visual Studio code 
 ```bash
 code ~/CPX-2025-automation-ws/01-terraform/main.tf
 ```
 
-2. Review **admins.tf**, terraform configuration file and review the code block to create a adminstrator,
+2. Review **admins.tf**, terraform configuration file and review the code block to create an administrator,
 <br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/system-data/admins.tf** Visual Studio code 
 ```bash
 code ~/CPX-2025-automation-ws/01-terraform/system-data/admins.tf
@@ -55,7 +56,7 @@ You are now ready to deploy the policy using terraform
 ```bash
 cd ~/CPX-2025-automation-ws/01-terraform
 ```
-2. Run `terraform init` to download the provider and initialize the coresponding modules
+2. Run `terraform init` to download the provider and initialize the corresponding modules
 3. Run `terraform apply` and look at the plan and the 33 changes that will be made
 4. Accept by answering **yes**
 
@@ -75,9 +76,9 @@ code ~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf
 ```
 2. Run `terraform apply`, look at the plan and try to understand what changes terraform will make
 3. Accept by answering **yes**
-4. Go to Web SmartConsole **"admin/Cpwins1!"**, and see if the collor of the host objecy has changed.
+4. Go to Web SmartConsole **"admin/Cpwins1!"**, and see if the color of the host object has changed.
 
-### Destroy a Terraform resourse and review the changes
+### Destroy a Terraform resource and review the changes
 1. Open **hosts.tf**, terraform configuration and remove the code block for the resource "**azurelbhealthcheck**"
 <br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf** Visual Studio code 
 ```bash
@@ -94,7 +95,7 @@ cd ~/CPX-2025-automation-ws/02-ansible/
 ## Lab 2 - Build and maintain an enterprise Check Point policy with IAC using Ansible   
 
 ### Add latest Check Point management ansible collection
-As per installation instructions "https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/" install the collection with this command
+Install the collection with this command:
 ```bash
 ansible-galaxy collection install check_point.mgmt
 ```
@@ -178,7 +179,7 @@ ansible-playbook myobject-playbook.yml -i inventory.yml
 8. Go to Web Smart Console **"admin/Cpwins1!"**, check what happened with your object.
 <br>What does `state: absent` mean?
 
-**Done**: If you have some spare time you can go to https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/docs/, pick an example from the list and try to create that object with Ansible, or make some changes to your terraform configuration to see what happens.
+**Done**: If you have some spare time you can go to https://galaxy.ansible.com/ui/namespaces/check_point/, pick an example from the management collection list and try to create that object with Ansible, or make some changes to your terraform configuration to see what happens.
 
 ## Resources:
 - [sk121360 - Check Point APIs homepage](https://support.checkpoint.com/results/sk/sk121360)
