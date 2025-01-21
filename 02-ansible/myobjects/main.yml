@@ -1,15 +1,1 @@
-- name: add-vpn-community-meshed
-  cp_mgmt_vpn_community_meshed:
-    name: Jims VPN Community by Ansible
-    state: present
-    color: red
-    encryption_method: prefer ikev2 but support ikev1
-    encryption_suite: custom
-    ike_phase_1:
-      data_integrity: sha1
-      diffie_hellman_group: group-19
-      encryption_algorithm: aes-128
-    ike_phase_2:
-      data_integrity: aes-xcbc
-      encryption_algorithm: aes-gcm-128
-    auto_publish_session: true
+
