@@ -1,7 +1,9 @@
 # CPX-2025-automation-ws
 Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on experience on the Check Point management API and the integration with Terraform and Ansible
 
-Add a description and a diagram of the automation environment
+**Environment information**. The environment includes a DevSecOps workstation (this virtual machine, **Windows Client**) installed with Microsoft VS Code IDE that remotely access the orchestration server (**orchestrator** virtual machine) to edit the IaC templates and run automation tasks.
+The automation tools used in the workshop (terraform and ansible) running on the orchestration server are translating high level orchestration tasks into low-level REST API requests sent to endpoints exposed by (**Check Point Quantum R82 Management** virtual machine).
+The result of automation operations will be verified in the Quantum Security Management Web SmartConsole accessed from the browser installed on **Windows Client** (this VM).
 
 ## Connect to the environment
 1. Open the provided link and go to the tab “**Windows Client**” in CloudShare.
