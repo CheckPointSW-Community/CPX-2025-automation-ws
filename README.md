@@ -2,17 +2,20 @@
 Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on experience on the Check Point management API and the integration with Terraform and Ansible
 
 **Environment information**. The environment includes a DevSecOps workstation (this virtual machine, **Windows Client**) installed with Microsoft Visual Studio Code IDE that remotely access the orchestration server (**orchestrator** virtual machine) to edit the IaC templates and run automation tasks.
+
 The automation tools used in the workshop (terraform and ansible) running on the orchestration server are translating high level orchestration tasks into low-level REST API requests sent to endpoints exposed by (**Check Point Quantum R82 Management** virtual machine).
+
 The result of automation operations will be verified in the Quantum Security Management Web SmartConsole accessed from the browser installed on **Windows Client** (this VM).
 
 ## Connect to the environment
 1. Open the provided link and go to the tab “**Windows Client**” in CloudShare. You will be presented with Visual Studio Code IDE already launched.
+
 2. On "**Windows Client**", in Visual Studio Code IDE, click on "**Reload Window**" to allow Visual Studio Code to reconnect to the Orchestration Server
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/b9d6a66c-39bf-4bd9-86e5-e96583f1558b" />
 
 Check the blue Remote-SSH connectivity icon to orchestration server in the status bar of VS Code. Once connected to the orchestration server, Visual Studio Code will allow editing IaC files and will expose a remote terminal to run orchestration tasks. 
 
-4. Follow the instructions in the open **README.md** in Visual Studio Code
+3. Follow the instructions in the open **README.md** in Visual Studio Code
 
 ## Lab 1 - Build simple Check Point policy with IAC using Terraform  
 
