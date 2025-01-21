@@ -1,17 +1,20 @@
 # CPX-2025-automation-ws
 Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on experience on the Check Point management API and the integration with Terraform and Ansible
 
+Add a description and a diagram of the automation environment
+
 ## Connect to the environment
 1. Open the provided link and go to the tab “**Windows Client**” in CloudShare.
 2. On "**Windows Client**" click on "**Reload Window**" to allow Visual Studio Code to reconnect to the Orchestration Server
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/b9d6a66c-39bf-4bd9-86e5-e96583f1558b" />
 
-3. Follow the instructions in the open **README.md** in Visual Studio Code
+3. add a step to check Remote-SSH connectivity to orchestration server in the status bar of VS Code.
+4. Follow the instructions in the open **README.md** in Visual Studio Code
 
 ## Lab 1 - Build simple Check Point policy with IAC using Terraform  
 
 ### Prepare the environment
-1. In this environment we stored the login information in these environmental variables 
+1. In this environment we stored the Check Point management server login information on the orchestration server in these environmental variables 
    * CHECKPOINT_API_KEY 
    * CHECKPOINT_SERVER
 
@@ -103,16 +106,16 @@ cd ~/CPX-2025-automation-ws/02-ansible/
 ### Add latest Check Point management ansible collection
 Install the Management collection with this command:
 ```bash
-ansible-galaxy collection install check_point.mgmt
+    ansible-galaxy collection install check_point.mgmt
 ```
 If you get an notification that "Nothing to do. All requested collections are already installed" run the install of the collection again using `--force`
 ```bash
-ansible-galaxy collection install check_point.mgmt --force
+    ansible-galaxy collection install check_point.mgmt --force
 ```
 ### Add latest Check Point Gaia ansible collection
 Install the Gaia collection with this command:
 ```bash
-ansible-galaxy collection install check_point.gaia
+    ansible-galaxy collection install check_point.gaia
 ```
 
 ### Deploy the enterprise policy using Ansible
