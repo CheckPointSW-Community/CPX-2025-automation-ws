@@ -6,7 +6,9 @@ Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on e
 2. On "**Windows Client**" click on "**Reload Window**" to allow Visual Studio Code to reconnect to the Orchestration Server
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/b9d6a66c-39bf-4bd9-86e5-e96583f1558b" />
 
-3. Follow the instructions in the open **README.md** in Visual Studio Code
+3. Adjust keyboard layout if needed <img width="100" alt="image" src="https://github.com/user-attachments/assets/c6f0d9b1-167b-4306-a21a-0c4be2ffc241" />
+
+4. Follow the instructions in the open **README.md** in Visual Studio Code
 
 ## Prepare the environment
 1. In this environment we stored the login information in these environmental variables 
