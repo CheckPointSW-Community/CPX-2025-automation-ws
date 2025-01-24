@@ -1,8 +1,14 @@
 # CPX-2025-automation-ws
 Check Point Autmation workshop at CPX 2025, allowing engineers to get hands-on experience on the Check Point management API and the integration with Terraform and Ansible
 
+**Environment information**. The environment includes a DevSecOps workstation (this virtual machine, **Windows Client**) installed with Microsoft Visual Studio Code IDE that remotely access the orchestration server (**orchestrator** virtual machine) to edit the IaC templates and run automation tasks.
+
+The automation tools used in the workshop (terraform and ansible) running on the orchestration server are translating high level orchestration tasks into low-level REST API requests sent to endpoints exposed by (**Check Point Quantum R82 Management** virtual machine).
+
+The result of automation operations will be verified in the Quantum Security Management Web SmartConsole accessed from the browser installed on **Windows Client** (this VM).
+
 ## Connect to the environment
-1. Open the provided link and go to the tab “**Windows Client**” in CloudShare.
+1. Open the provided link and go to the tab “**Windows Client**” in in Visual Studio Code IDE. You will be presented with Visual Studio Code IDE already launched.
 2. On "**Windows Client**" click on "**Reload Window**" to allow Visual Studio Code to reconnect to the Orchestration Server
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/b9d6a66c-39bf-4bd9-86e5-e96583f1558b" />
 
@@ -22,7 +28,7 @@ printenv CHECKPOINT_SERVER
 ```
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/14d425c0-5427-4930-a2a8-0a1b3c05c4c4" />
 
-3. Use the Microsoft Edge browser to go to Web SmartConsole **"admin/Cpwins1!"**.
+3.  Use the Microsoft Edge browser to access management server [Web SmartConsole](https://10.128.0.100/smartconsole) with **"admin/Cpwins1!"** credentials.
 <br><img width="200" alt="image" src="https://github.com/user-attachments/assets/fc23f4c3-237a-4a48-9d03-d3d2cd727f39" />
 <br>In case the following error message appear: “**Web SmartConsole service is not available**”
 <br>This is because Web SmartConsole was updated to a newer version, **just reload the webpage** and accepting the new certificate to proceed.
@@ -75,11 +81,7 @@ cd ~/CPX-2025-automation-ws/01-terraform
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/0e090de5-9a2e-4bd2-ba20-3b7edb6ab2de" />
 
 ### Change your Terraform configuration and review the changes
-1. Open **hosts.tf**, terraform configuration and change the color of the host object **azure_lb_health_check** to **red**
-
->[!TIP]
->Once you edited the file in visual studio code you can press `ctrl+s` to save your changes
-
+1. Open **hosts.tf**, terraform configuration file in in visual studio code and change the color of the host object **azure_lb_health_check** to **red**.
 <br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf** Visual Studio code 
 ```bash
 code ~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf
@@ -177,11 +179,14 @@ In the example we are creating a VPN community of type meshed with color red:
 ```bash
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
+In the terminal window monitor the execution of the playbook. Note the order in which objects in IaC files are deployed.
+<br>What do you think will happen if you will interrupt the execution of playbook and re-run it?
+
 6. Go to  Web Smart Console **"admin/Cpwins1!"**, see the changes applied by Ansible.
 <br>![image](https://github.com/user-attachments/assets/4bc15524-1d4d-4e21-9ea7-dec2d867483c)
 
 ### Task 5 - Test idempotency of your playbook and the modules
-1. Re-run the playbook **myobject-playbook.yml**, you will see that the modules are **idempotent**. Since your ansible code is equal to the reality. no change is made and ansible responds with ok
+1. Re-run the playbook **myobject-playbook.yml**, you will see that the modules are **idempotent**. Since your ansible code (desired state) is equal to the reality (current state). no change is made and ansible responds with ok
 ```bash
 ansible-playbook myobject-playbook.yml -i inventory.yml
 ```
