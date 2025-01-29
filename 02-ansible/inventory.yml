@@ -9,3 +9,10 @@ all:
           ansible_httpapi_use_ssl: true
           ansible_httpapi_validate_certs: false
           ansible_network_os: check_point.mgmt.checkpoint
+        GW1:
+          ansible_host: "{{ lookup('env','CHECKPOINT_GW1') }}"
+          ansible_user: "{{ lookup('env','CHECKPOINT_GW1_USER') }}"
+          ansible_ssh_pass: "{{ lookup('env','CHECKPOINT_GW1_PASSWORD') }}"
+          ansible_httpapi_use_ssl: true
+          ansible_httpapi_validate_certs: false
+          ansible_network_os: check_point.gaia.checkpoint
