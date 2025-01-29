@@ -1,4 +1,4 @@
-- name: Playbook for rules and objects exported to Ansible from the Check Point API
+- name: Playbook for adding objects and rules to Dynamic Layer
   connection: httpapi
   hosts: GW1
   gather_facts: false
