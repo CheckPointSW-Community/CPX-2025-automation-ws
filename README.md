@@ -264,6 +264,7 @@ ansible-playbook myobject-playbook.yml -i inventory.yml
 **Done**: If you have some spare time you can go to https://galaxy.ansible.com/ui/namespaces/check_point/, pick an example from the management collection list and try to create that object with Ansible, or make some changes to your terraform configuration to see what happens.
 
 ## Resources:
+- [Self-Managed Security Gateways](https://sc1.checkpoint.com/documents/R82/WebAdminGuides/EN/CP_R82_SecurityManagement_AdminGuide/Content/Topics-SECMG/Self-Managed-Security-Gateways.htm)
 - [sk121360 - Check Point APIs homepage](https://support.checkpoint.com/results/sk/sk121360)
 - [Check Point API Reference Guide](https://sc1.checkpoint.com/documents/latest/api_reference/index.html)
 - [Check Point AI Copilot](https://support.checkpoint.com/ai)
