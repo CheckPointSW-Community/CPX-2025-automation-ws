@@ -15,9 +15,7 @@
       {
         "name": "Google dns",
         "ip-address": "8.8.8.8"
-      }
-    ],
-    "hosts": [
+      },
       {
         "name": "Windows Client",
         "ip-address": "10.128.0.28"
