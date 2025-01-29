@@ -1,0 +1,15 @@
+- name: Playbook for rules and objects exported to Ansible from the Check Point API
+  connection: httpapi
+  hosts: GW1
+  gather_facts: false
+  collections:
+  - check_point.gaia
+  vars:
+    state: present
+  tasks:
+    - name: Fill Dynamic Layer with objects and rules
+      check_point.gaia.cp_gaia_dynamic_content:
+        policy_path: "./GW1-Dynamic-Layer.json"
+        dry_run: false
+        comments: "Updating Dynamic Layer"
+        wait_for_task: true

@@ -1,0 +1,67 @@
+{
+  "referenced-objects": {
+    "access-layers": [
+      "GW 1 Dynamic Layer"
+    ],
+    "services-icmp": [
+        "echo-request"
+    ],
+	"application-sites": [
+		"Facebook"
+	]
+  },
+  "objects": {
+    "hosts": [
+      {
+        "name": "Google dns",
+        "ip-address": "8.8.8.8"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Windows Client",
+        "ip-address": "10.128.0.28"
+      }
+    ]
+  },
+  "access-layers-content": [
+    {
+      "name": "GW 1 Dynamic Layer",
+      "operation": "replace",
+      "rulebase": [
+        {
+          "name": "Allow ICMP from Windows Client",
+          "action": "Accept",
+          "track": {
+              "type": "Log"
+          },
+          "source": [
+            "Windows Client"
+          ],
+          "destination": [
+            "Google dns"
+          ],
+          "service": [
+              "echo-request"
+          ]
+        },
+		{
+          "name": "Allow Facebook from Windows Client",
+          "action": "Drop",
+          "track": {
+              "type": "Log"
+          },
+          "source": [
+            "Windows Client"
+          ],
+          "destination": [
+            "internet"
+          ],
+          "service": [
+              "Facebook"
+          ]
+        }
+      ]
+    }
+  ]
+}
