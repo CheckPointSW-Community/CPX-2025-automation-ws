@@ -47,7 +47,7 @@
         },
 		{
           "name": "Allow Facebook from Windows Client",
-          "action": "Drop",
+          "action": "Accept",
           "track": {
               "type": "Log"
           },

@@ -11,5 +11,6 @@
       check_point.gaia.cp_gaia_dynamic_content:
         policy_path: "./GW1-Dynamic-Layer.json"
         dry_run: false
+        tags: ["JIRA-12345", "add rules to gw1 dynamic layer"]
         comments: "Updating Dynamic Layer"
         wait_for_task: true
