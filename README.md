@@ -121,7 +121,7 @@ This Policy Layer serves as a container for rules created directly on the Securi
 
 The Dynamic Layer works as a container for rules that you configure on the Security Gateway. You can fill this container with rules using in our case the "**cp_gaia_dynamic_content**" Ansible module and instruct Ansible to update the Security Gateway directly.
 
-For your convenience and to save time a dynamic layer named "**GW1 Dynamic Layer**" is already created and applied as an inline layer to the policy gw1-policy-package.
+For your convenience and to save time a dynamic layer named "**GW1 Dynamic Layer**" is already created and applied as an inline layer to the policy **gw1-policy-package**.
 <br><img width="469" alt="image" src="https://github.com/user-attachments/assets/a30d651e-8acd-45ec-98ff-e5400ac63a38" />
 
 This policy is already installed on GW1
