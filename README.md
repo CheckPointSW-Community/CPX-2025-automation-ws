@@ -269,7 +269,7 @@ ansible-playbook myobject-playbook.yml -i inventory.yml
 - [Check Point API Reference Guide](https://sc1.checkpoint.com/documents/latest/api_reference/index.html)
 - [Check Point AI Copilot](https://support.checkpoint.com/ai)
 - [Check Point Management Terraform Provider](https://registry.terraform.io/providers/CheckPointSW/checkpoint/latest/docs)
-- [Check Point Ansible collection for the Management Server](https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/)
+- [Check Point Ansible collections](https://galaxy.ansible.com/ui/namespaces/check_point/)
 - [Github - Check Point Software Technologies Ltd.](https://github.com/checkpointsw)
 - [Github - Check Point CheckMates Community](https://github.com/checkpointsw-community)
   -  [AnsibleFest2020-Demos](https://github.com/CheckPointSW-Community/AnsibleFest2020-Demos)
