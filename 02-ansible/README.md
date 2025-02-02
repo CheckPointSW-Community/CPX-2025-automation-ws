@@ -1,5 +1,5 @@
 ## Lab 2 - Build and maintain rules in Dynamic Layer and a enterprise policy with IAC using Ansible   
-**Done**: Go to next lab in 02-ansible folder by executing this command
+**To start**: Go 02-ansible folder by executing this command
 ```bash
 cd ~/CPX-2025-automation-ws/02-ansible/
 ```
