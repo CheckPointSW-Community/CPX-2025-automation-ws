@@ -1,3 +1,27 @@
+## Lab 1 - Build simple Check Point policy with IAC using Terraform  
+
+### Task 1 - Review Terraform configuration
+1. Review **main.tf** terraform configuration file. As you can see, we have defined two aliases for the provider configuration, allowing us to login to different domains in the management server in one terraform run.
+ - The code block `module "admins" {` points to the folder **system-data** containing  the terraform configuration to create an admin
+ - The code block `module "policy" {` points to the folder **policy** containing  the terraform configuration to create the Security Policy
+ - In the **checkpoint_management_publish** code blocks you can see that it is configured to trigger when there is a configuration change on the files in the folders system-data and policy, as well as forcing it to run on terraform destroy actions.
+ - The below command will open the **~/CPX-2025-automation-ws/01-terraform/main.tf** file in Visual Studio code 
+```bash
+code ~/CPX-2025-automation-ws/01-terraform/main.tf
+```
+
+2. Review **admins.tf**, terraform configuration file and review the code block to create an administrator,
+<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/system-data/admins.tf** Visual Studio code 
+```bash
+code ~/CPX-2025-automation-ws/01-terraform/system-data/admins.tf
+```
+
+3. Review **hosts.tf**, terraform configuration file and review the code block to add host objects to the security configuration,
+<br>The below command will open the file in **~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf** Visual Studio code 
+```bash
+code ~/CPX-2025-automation-ws/01-terraform/policy/hosts.tf
+```
+
 ### Task 2 - Deploy the policy
 You are now ready to deploy the policy using terraform
 
