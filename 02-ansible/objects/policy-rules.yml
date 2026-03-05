@@ -746,7 +746,6 @@
       per_session: false
       per_connection: false
       accounting: false
-      enable_firewall_session: false
       alert: none
     action: Apply Layer
     comments: ''
@@ -852,7 +851,6 @@
       per_session: false
       per_connection: false
       accounting: false
-      enable_firewall_session: false
       alert: none
     action: Apply Layer
     comments: ''
@@ -924,7 +922,6 @@
       per_session: false
       per_connection: false
       accounting: false
-      enable_firewall_session: false
       alert: none
     action: Apply Layer
     comments: ''
@@ -1030,7 +1027,6 @@
       per_session: false
       per_connection: false
       accounting: false
-      enable_firewall_session: false
       alert: none
     action: Apply Layer
     comments: ''
@@ -1065,7 +1061,6 @@
       per_session: false
       per_connection: false
       accounting: false
-      enable_firewall_session: false
       alert: none
     action: Apply Layer
     comments: ''
@@ -1098,7 +1093,6 @@
       per_session: false
       per_connection: false
       accounting: false
-      enable_firewall_session: false
       alert: none
     action: Apply Layer
     comments: ''
@@ -1564,7 +1558,7 @@
     enabled: true
     install_on:
     - Policy Targets
-    service: Office365
+    service: 'Microsoft 365'
     
     user_check:
       interaction: Blocked Message - Access Control
