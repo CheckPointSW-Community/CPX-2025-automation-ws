@@ -742,9 +742,9 @@
     content_direction: any
     content_negate: false
     track:
-      type: None
+      type: Log
       per_session: false
-      per_connection: false
+      per_connection: true
       accounting: false
       enable_firewall_session: false
       alert: none
@@ -848,9 +848,9 @@
     content_direction: any
     content_negate: false
     track:
-      type: None
+      type: Log
       per_session: false
-      per_connection: false
+      per_connection: true
       accounting: false
       enable_firewall_session: false
       alert: none
@@ -920,9 +920,9 @@
     content_direction: any
     content_negate: false
     track:
-      type: None
+      type: Log
       per_session: false
-      per_connection: false
+      per_connection: true
       accounting: false
       enable_firewall_session: false
       alert: none
@@ -1026,9 +1026,9 @@
     content_direction: any
     content_negate: false
     track:
-      type: None
+      type: Log
       per_session: false
-      per_connection: false
+      per_connection: true
       accounting: false
       enable_firewall_session: false
       alert: none
@@ -1061,9 +1061,9 @@
     content_direction: any
     content_negate: false
     track:
-      type: None
+      type: Log
       per_session: false
-      per_connection: false
+      per_connection: true
       accounting: false
       enable_firewall_session: false
       alert: none
@@ -1094,9 +1094,9 @@
     content_direction: any
     content_negate: false
     track:
-      type: None
+      type: Log
       per_session: false
-      per_connection: false
+      per_connection: true
       accounting: false
       enable_firewall_session: false
       alert: none
@@ -1564,7 +1564,7 @@
     enabled: true
     install_on:
     - Policy Targets
-    service: Office365
+    service: Microsoft & Office365 Services
     
     user_check:
       interaction: Blocked Message - Access Control
